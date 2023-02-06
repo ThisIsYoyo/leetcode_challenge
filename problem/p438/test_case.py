@@ -1,0 +1,10 @@
+TEST_CASES = [
+    (
+        ('cbaebabacd', 'abc'),
+        [0, 6],
+    ),
+    (
+        ('abab', 'ab'),
+        [0, 1, 2],
+    ),
+]
