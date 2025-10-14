@@ -1,0 +1,15 @@
+TEST_CASES = [
+    (
+        "the sky is blue",
+        "blue is sky the",
+    ),
+    (
+        "  hello world  ",
+        "world hello",
+    ),
+    (
+        "a good   example",
+        "example good a",
+    ),
+]
+
