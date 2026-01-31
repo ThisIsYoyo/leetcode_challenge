@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "permuteUnique"
+
     def __init__(self):
         self._cache = {}  # sorted_nums_tuple: unique_permute_result
 

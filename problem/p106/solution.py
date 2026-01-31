@@ -10,6 +10,8 @@ class TreeNode:
 
 
 class Solution:
+    process_function_str = "buildTree"
+
     def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
         if not postorder:
             return None

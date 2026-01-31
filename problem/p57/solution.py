@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "insert"
+
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         lower_intersect = None  # (idx, interval)
         higher_intersect = None  # (idx, interval)

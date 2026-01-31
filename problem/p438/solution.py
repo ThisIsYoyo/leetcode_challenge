@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "findAnagrams"
+
     def findAnagrams(self, s: str, p: str) -> List[int]:
         anagrams_idx_list = []
         len_p = len(p)

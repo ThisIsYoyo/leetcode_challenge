@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "isValidSudoku"
+
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         # valid each row
         for row in board:

@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "minTime"
+
     def minTime(self, n: int, edges: List[List[int]], hasApple: List[bool]) -> int:
         zero_to_node_map = self.bfs_build_zero_to_node_map(edges)
 

@@ -1,4 +1,6 @@
 class Solution:
+    process_function_str = "partitionString"
+
     def partitionString(self, s: str) -> int:
         appeared_string_set = set()
 

@@ -1,41 +1,45 @@
+#!/usr/bin/env python3
+import argparse
 import sys
-import time
-from typing import Tuple
-
-import pytest
+from pathlib import Path
 
 
-SPECIFIC_PROBLEM_DIR_NAME = 'p29'
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="test_problem",
+        description="test leetcode problem",
+    )
+    parser.add_argument("problem_number", type=int, help="problem number")
 
-sys.path.append(f'problem/{SPECIFIC_PROBLEM_DIR_NAME}')
-import solution
-import test_case
-try:
-    import verify
-except ModuleNotFoundError:
-    class verify:
-        @staticmethod
-        def verify(result, test_output):
-            assert result == test_output
+    return parser
 
 
-@pytest.mark.parametrize("test_case", test_case.TEST_CASES)
-def test_problem(test_case):
-    t_input, t_output = test_case
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
 
-    sol = solution.Solution()
-    no_underscore_func_str = [func for func in dir(sol) if callable(getattr(sol, func)) and '_' not in func][0]
-    sol_func = getattr(sol, no_underscore_func_str)
+    # import problem package
+    problem_folder = Path(__file__).parent / "problem" / f"p{args.problem_number}"
+    sys.path.insert(0, str(problem_folder.resolve()))
 
-    spend_t = 0
-    if isinstance(t_input, Tuple):
-        _t = time.time()
-        result = sol_func(*t_input)
-        spend_t = time.time() - _t
-    else:
-        _t = time.time()
-        result = sol_func(t_input)
-        spend_t = time.time() - _t
+    # import solution, test_case, verify
+    from solution import Solution
+    from test_case import TEST_CASES
+    try:
+        from verify import verify
+    except ModuleNotFoundError:
+        def verify(actual, expected) -> bool:
+            return actual == expected
 
-    verify.verify(result, t_output)
-    print(f"\ntestcase spend time: {spend_t} secs")
+    sol = Solution()
+    process_function = getattr(sol, sol.process_function_str)
+
+    for input_, expected in TEST_CASES:
+        if isinstance(input_, tuple):
+            actual = process_function(*input_)
+        else:
+            actual = process_function(input_)
+        assert verify(actual, expected), (actual, expected)
+
+if __name__ == "__main__":
+    raise SystemExit(main())

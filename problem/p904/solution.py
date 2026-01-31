@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "totalFruit"
+
     def totalFruit(self, fruits: List[int]) -> int:
         reversed_fruits = fruits[::-1]
 

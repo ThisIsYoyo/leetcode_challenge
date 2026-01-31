@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "search"
+
     def search(self, nums: List[int], target: int) -> int:
         start = 0
         end = len(nums) - 1

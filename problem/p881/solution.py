@@ -3,6 +3,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "numRescueBoats"
+
     def numRescueBoats(self, people: List[int], limit: int) -> int:
         sorted_people = sorted(people)
 

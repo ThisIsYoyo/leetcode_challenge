@@ -1,4 +1,6 @@
 class Solution:
+    process_function_str = "isSubsequence"
+
     def isSubsequence(self, s: str, t: str) -> bool:
         if not s:
             return True

@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "jump"
+
     def jump(self, nums: List[int]) -> int:
         n = len(nums)
         if n == 1:

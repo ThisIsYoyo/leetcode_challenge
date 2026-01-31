@@ -1,4 +1,6 @@
 class Solution:
+    process_function_str = "myPow"
+
     def myPow(self, x: float, n: int) -> float:
         if n == 0:
             return 1

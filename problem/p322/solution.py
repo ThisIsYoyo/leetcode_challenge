@@ -3,6 +3,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "coinChange"
+
     def coinChange(self, coins: List[int], amount: int) -> int:
         min_coin = [math.inf] * (amount + 1)  # amount i need at least min_coin[i]
         min_coin[0] = 0

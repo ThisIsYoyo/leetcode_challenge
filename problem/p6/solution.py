@@ -1,4 +1,6 @@
 class Solution:
+    process_function_str = "convert"
+
     def convert(self, s: str, numRows: int) -> str:
         if numRows == 1:
             return s

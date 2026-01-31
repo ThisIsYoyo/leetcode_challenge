@@ -2,6 +2,8 @@ from typing import List, Tuple
 
 
 class Solution:
+    process_function_str = "numEnclaves"
+
     def __init__(self):
         self._grid = None
 

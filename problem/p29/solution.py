@@ -1,4 +1,6 @@
 class Solution:
+    process_function_str = "divide"
+
     INT_MIN = - 2 ** 31
     INT_MAX = 2 ** 31 - 1
 

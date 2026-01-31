@@ -1,10 +1,11 @@
 class Solution:
+    process_function_str = "isPalindrome"
+
     def isPalindrome(self, s: str) -> bool:
         pure_lower = ""
         for char in s:
             if "a" <= char <= "z" or "A" <= char <= "Z" or "0" <= char <= "9":
                 pure_lower = pure_lower + char.lower()
-        print(pure_lower)
 
         if len(pure_lower) <= 1:
             return True

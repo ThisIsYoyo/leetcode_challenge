@@ -6,6 +6,6 @@ def verify(result: List[List[int]], test_output: List[List[int]]) -> bool:
         if r in test_output:
             test_output.remove(r)
         else:
-            assert False
+            return False
 
-    assert test_output == []
+    return test_output == []

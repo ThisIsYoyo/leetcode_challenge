@@ -2,6 +2,8 @@ from typing import List
 
 
 class Solution:
+    process_function_str = "distinctNames"
+
     def distinctNames(self, ideas: List[str]) -> int:
         first_letter_classify = {}  # first letter: rest letter set
         for idea in ideas:

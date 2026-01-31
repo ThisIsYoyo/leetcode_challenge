@@ -4,6 +4,8 @@ from problem.p100.test_case import TreeNode
 
 
 class Solution:
+    process_function_str = "isSameTree"
+
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         return self.dfs_compare_node(p, q)
 
