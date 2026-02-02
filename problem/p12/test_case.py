@@ -1,0 +1,14 @@
+TEST_CASES = [
+    (
+        3749,
+        "MMMDCCXLIX",
+    ),
+    (
+        58,
+        "LVIII",
+    ),
+    (
+        1994,
+        "MCMXCIV",
+    ),
+]
